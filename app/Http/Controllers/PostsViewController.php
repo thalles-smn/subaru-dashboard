@@ -98,4 +98,18 @@ class PostsViewController extends Controller
         $photo = env("AWS_URL") . $post->photos()->first()->path;
         return view("posts.edit", compact('post', 'photo'));
     }
+
+    public function destroy($id){
+        $post = $this->post->find($id);
+
+        if($post != null){
+            $photos = $post->photos();
+            foreach ($photos as $photo ){
+                $photo->delete();
+            }
+            $post->delete();
+        }
+
+        return redirect()->route('posts.index');
+    }
 }

@@ -23,3 +23,4 @@ Route::get('/posts/create', 'PostsViewController@create')->name('posts.create');
 Route::post('/posts', 'PostsViewController@store')->name('posts.store');
 Route::put('/posts/{id}', 'PostsViewController@update')->name('posts.update');
 Route::get('/posts/{id}', 'PostsViewController@edit')->name('posts.edit');
+Route::get('/posts/destroy/{id}', 'PostsViewController@destroy')->name('posts.destroy');

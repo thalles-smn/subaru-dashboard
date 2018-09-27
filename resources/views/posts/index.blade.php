@@ -21,7 +21,7 @@
                                     <td>{{ $post->title  }}</td>
                                     <td>
                                         <a class="btn btn-warning" href="{{ route('posts.edit',['id'=>$post->id]) }}">Editar</a>
-                                        <a class="btn btn-danger" href="{{ route('posts.index',['id'=>$post->id]) }}">Excluir</a>
+                                        <a class="btn btn-danger" href="{{ route('posts.destroy',['id'=>$post->id]) }}">Excluir</a>
                                     </td>
                                 </tr>
                             @endforeach
