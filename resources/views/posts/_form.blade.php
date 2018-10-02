@@ -10,6 +10,7 @@
         @endif
     </div>
 </div>
+
 <div class="form-group {{ $errors->has('text') ? ' has-error' : '' }}">
     {!! Form::label('text', 'Conteudo', ['class'=>'col-md-4 control-label']) !!}
     <div class="col-md-12">

@@ -7,7 +7,6 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         {!! Form::open(['method'=>'post','class'=>'form-horizontal','files' => true, 'route'=>['posts.store']]) !!}
-
                         @include('posts._form')
 
                         <div class="form-group">
@@ -24,4 +23,16 @@
             </div>
         </div>
     </div>
+
+    <script type="application/javascript">
+        $.when( $.ready ).then(function() {
+            $('#text').wysihtml5({
+                toolbar: {
+                    "image": false
+                }
+            });
+        });
+
+    </script>
+
 @endsection
