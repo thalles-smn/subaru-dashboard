@@ -32,7 +32,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return response()->json($this->post->all(), 200);
+        return response()->json($this->post->orderBy('created_at', 'desc')->get(), 200);
     }
 
     /**
