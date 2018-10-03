@@ -32,7 +32,12 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return response()->json($this->post->orderBy('created_at', 'desc')->get(), 200);
+        return response()->json($this->post->orderBy('created_at', 'desc')->get(), 200);	
+    }
+	
+	public function marked()
+    {
+        return response()->json($this->post->where('marked', true)->orderBy('created_at', 'desc')->get(), 200);		
     }
 
     /**
@@ -94,6 +99,8 @@ class PostsController extends Controller
 
         return response()->noContent(404);
     }
+	
+	
 
     /**
      * Remove the specified resource from storage.

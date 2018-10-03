@@ -17,3 +17,4 @@ Route::resource("posts", "PostsController");
 Route::resource("photos", "PhotoController");
 Route::post("photos/{postId}", "PhotoController@upload");
 Route::get("posts/photos/{id}", "PostsController@photos");
+Route::get("posts/marked/list", "PostsController@marked");

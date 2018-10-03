@@ -87,6 +87,27 @@ class PostsViewController extends Controller
 
         return redirect()->route('posts.index');
     }
+	
+	public function marked( $id ){
+		
+		$post = $this->post->find($id);
+		
+		if($post != null){
+			
+			if(isset($post->marked) && is_bool($post->marked) && $post->marked){
+				$post->marked = false;
+			} else {
+				$post->marked = true;
+			}
+			
+			$post->update();
+			
+			return redirect()->route('posts.index');
+			
+		}
+		
+		return redirect()->route('posts.index');
+	}
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

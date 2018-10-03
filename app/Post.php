@@ -11,6 +11,7 @@ class Post extends Model
         "text",
         "author",
         "youtube_url",
+		"marked",
         "active"
     ];
 

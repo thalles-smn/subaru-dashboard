@@ -21,6 +21,11 @@
                                     <td>{{ $post->title  }}</td>
                                     <td>
                                         <a class="btn btn-warning" href="{{ route('posts.edit',['id'=>$post->id]) }}">Editar</a>
+										@if($post->marked == null || $post->marked == false)
+                                        <a class="btn btn-success" href="{{ route('posts.marked',['id'=>$post->id]) }}">Marcar</a>
+										@elseif($post->marked != null && $post->marked == true)
+										<a class="btn btn-info" href="{{ route('posts.marked',['id'=>$post->id]) }}">Desmarcar</a>
+										@endif
                                         <a class="btn btn-danger" href="{{ route('posts.destroy',['id'=>$post->id]) }}">Excluir</a>
                                     </td>
                                 </tr>
